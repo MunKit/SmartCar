@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SmartCar</string>
+    <string name="door">Door lock</string>
+    <string name="Alarm">Alarm</string>
+    <string name="Lamp">Front Lamp</string>
+    <string name="Aircon">Air condition</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="empty"> </string>
+</resources>
