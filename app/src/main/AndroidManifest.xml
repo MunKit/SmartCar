@@ -31,6 +31,9 @@
         <activity android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:keepScreenOn="true"></activity>
+        <activity android:name=".monitoring"
+            android:screenOrientation="portrait"
+            android:keepScreenOn="true"></activity>
         <receiver android:name="receivealarm"/>
 
         <service android:name="RingtonePlayingService"

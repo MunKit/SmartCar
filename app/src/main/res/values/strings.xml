@@ -8,4 +8,11 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="empty"> </string>
+    <string name="companyname">Genius Co.</string>
+    <string name="fuel">Fuel</string>
+    <string name="upperleft">Tire Presure 1</string>
+    <string name="water">Water</string>
+    <string name="upperright">Tire Presure 2</string>
+    <string name="lowerleft">Tire Presure 3</string>
+    <string name="lowerright">Tire Presure 4</string>
 </resources>

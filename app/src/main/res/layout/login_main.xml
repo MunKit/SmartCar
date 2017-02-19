@@ -1,38 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent" android:layout_height="match_parent">
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:id="@+id/usereditText"
-        android:hint="@string/username" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:layout_below="@+id/usereditText"
-        android:layout_alignStart="@+id/usereditText"
-        android:layout_marginTop="16dp"
-        android:id="@+id/passeditText"
-        android:hint="@string/password" />
-
-    <Button
-        android:text="@string/login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/passeditText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="64dp"
-        android:id="@+id/button" />
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#FF546CF3">
 
     <TextView
         android:layout_width="wrap_content"
@@ -42,4 +11,61 @@
         android:layout_marginTop="52dp"
         android:id="@+id/respondtext"
         android:textAlignment="center" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_marginTop="28dp"
+        android:id="@+id/passeditText"
+        android:hint="@string/password"
+        android:layout_below="@+id/usereditText"
+        android:layout_alignStart="@+id/usereditText"
+        android:textColorHint="@android:color/background_light"
+        android:textColorLink="@android:color/white"
+        android:textColor="@android:color/white"
+        android:textCursorDrawable="@android:color/background_light"
+        android:textColorHighlight="@android:color/background_light" />
+
+    <Button
+        android:text="@string/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:id="@+id/button"
+        android:layout_below="@+id/passeditText"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:text="@string/companyname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="61dp"
+        android:id="@+id/textView2"
+        android:fontFamily="cursive"
+        android:textSize="38sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="normal|bold"
+        android:textAlignment="center"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_marginTop="49dp"
+        android:id="@+id/usereditText"
+        android:hint="@string/username"
+        android:textColorHint="@android:color/background_light"
+        android:textColorLink="@android:color/white"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:textCursorDrawable="@android:color/background_light"
+        android:textColorHighlight="@android:color/background_light" />
 </RelativeLayout>

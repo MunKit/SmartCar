@@ -2,6 +2,7 @@ package com.example.munkit.smartcar;
 
 import android.app.Activity;
 import android.app.AlarmManager;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
@@ -18,6 +19,7 @@ import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 
+import android.support.v7.app.NotificationCompat;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -36,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "Mymessage";
     private final String pubchannel = "Car/message";
     private final String subchannel = "Car/respond";
+
+    NotificationCompat.Builder notification;
+    private static final int uniqueID = 45678925;
 
     AlarmManager alarm_manager;
     //ToggleButton alarmswitch;
@@ -57,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
 
         //Create Intent for alarm
         final Intent alarm_intent = new Intent(this.context, receivealarm.class);
+        notification = new NotificationCompat.Builder(this);
+        notification.setAutoCancel(true);
 
         mqttAndroidClient = new MqttAndroidClient(getApplicationContext(), serverUri, clientId);
         mqttAndroidClient.setCallback(new MqttCallbackExtended() {
@@ -167,6 +174,7 @@ public class MainActivity extends AppCompatActivity {
                 if (isChecked) {
                     // The toggle is enabled
                     publishMessage(pubchannel,"OnLamp");
+
                 } else {
                     publishMessage(pubchannel,"OffLamp");
                     // The toggle is disabled
@@ -198,6 +206,18 @@ public class MainActivity extends AppCompatActivity {
                     sendBroadcast(alarm_intent);
                     pending_intent = PendingIntent.getBroadcast(MainActivity.this, 1, alarm_intent,PendingIntent.FLAG_UPDATE_CURRENT);
                     alarm_manager.set(AlarmManager.RTC_WAKEUP, 0,pending_intent);
+                    notification.setSmallIcon(R.mipmap.ic_launcher);
+                    notification.setTicker("Alarm Activated!!!");
+                    notification.setWhen(System.currentTimeMillis());
+                    notification.setContentTitle("SmartCar");
+                    notification.setContentText("Alarm Activated!!!");
+                    Intent intet = new Intent(MainActivity.this,MainActivity.class);
+                    PendingIntent pending = PendingIntent.getActivities(MainActivity.this,0, new Intent[]{intet},PendingIntent.FLAG_UPDATE_CURRENT);
+                    notification.setContentIntent(pending);
+
+                    // builds notification and issues it
+                    NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                    nm.notify(uniqueID,notification.build());
 
                 } else {
                     publishMessage(pubchannel,"OffAlarm");
@@ -222,6 +242,17 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        final Button button1 = (Button)findViewById(R.id.button3);
+
+        button1.setOnClickListener(
+                new Button.OnClickListener(){
+                    public void onClick(View v){
+                            Intent intent = new Intent(MainActivity.this, monitoring.class);
+                            startActivity(intent);
+
+                    }
+                });
 
     }
     public void subscribeToTopic(String subscriptionTopic){

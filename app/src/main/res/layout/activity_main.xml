@@ -1,58 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="180dp"
-    android:paddingLeft="100dp"
-    android:paddingRight="100dp"
-    android:paddingTop="160dp"
-    android:background="#C0C0C0"
+    android:paddingBottom="120dp"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:paddingTop="130dp"
+    android:background= "#FF546CF3"
     tools:context="com.example.munkit.smartcar.MainActivity">
 
     <ToggleButton
         android:text="ToggleButton"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
         android:id="@+id/Alarmswitch"
         android:textOff="@string/empty"
         android:textOn="@string/empty"
         android:background="@drawable/alarm"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_width="120dp"
+        android:layout_height="120dp" />
 
     <ToggleButton
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:id="@+id/Airconswitch"
-        android:background="@drawable/aircon"
-        android:textOff="@string/empty"
-        android:textOn="@string/empty"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
-
-    <ToggleButton
-        android:text="ToggleButton"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:id="@+id/Lampswitch"
-        android:background="@drawable/carlight"
-        android:textOff="@string/empty"
-        android:textOn="@string/empty"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
-
-    <ToggleButton
-        android:layout_width="70dp"
-        android:layout_height="70dp"
         android:id="@+id/Doorswitch"
         android:textOff="@string/empty"
         android:textOn="@string/empty"
         android:background="@drawable/lockdoor"
         android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_width="120dp"
+        android:layout_height="120dp" />
+
+    <ToggleButton
+        android:id="@+id/Airconswitch"
+        android:background="@drawable/aircon"
+        android:textOff="@string/empty"
+        android:textOn="@string/empty"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true" />
+
+    <ToggleButton
+        android:text="ToggleButton"
+        android:id="@+id/Lampswitch"
+        android:background="@drawable/carlight"
+        android:textOff="@string/empty"
+        android:textOn="@string/empty"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="@string/empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:background="@android:drawable/ic_media_play"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/Alarmswitch" />
 
 
 </RelativeLayout>
